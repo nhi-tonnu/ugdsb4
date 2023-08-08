@@ -1,0 +1,72 @@
+<%@ Page Title="Upper Grand District School Board Home Page" Language="C#" MasterPageFile="~/newboard.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
+<%@ Register Assembly="Ektron.Cms.Controls" Namespace="Ektron.Cms.Controls" TagPrefix="CMS" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <CMS:MetaData ID="MetaData1" runat="server" DynamicParameter="id" /> 
+
+    <!--Alert! - board home page-->
+    <div class="col-md-12" id="alerts">
+        <CMS:ContentBlock ID="ContentBlock2" DefaultContentID="51995" runat="server" WrapTag="div" />
+    </div>
+    
+
+    <div class="col-md-12" id="promo"><!-- top index page content -->
+       <CMS:ContentBlock ID="ContentBlock1" DefaultContentID="48563" runat="server" WrapTag="div" />
+    </div> 
+    <!-- SLIDESHOW -->
+    <div class="col-md-8" >
+        <div class="row">
+            <div class="col-md-12" id="home-news">
+                 <h2><span class="glyphicon glyphicon-list-alt" style="padding-top:5px;"></span> News</h2>
+           
+                 <CMS:BlogEntries ID="BlogEntries1" BlogID="32405" MaxResults="6" showHeader="false" runat="server" displayXslt="~/xslt/blogentries_teaser2.xsl"  />           
+            </div>
+            <div class="col-md-12 view-all-div blue-bg"><span class="glyphicon glyphicon-share-alt pull-right pad-left"></span> <a href="news.aspx">View All News</a></div>
+        </div>
+        <div class="row">
+            <div id="spotlight">
+                <h2><span class="glyphicon glyphicon-star-empty" style="padding-top:5px;"></span> Spotlight on schools</h2>
+          
+                <CMS:BlogEntries ID="BlogEntries2" BlogID="32565" MaxResults="1" showHeader="false" runat="server" displayXslt="/xslt/blogentries_teaser.xsl" />
+            </div>
+            <div class="col-md-12 view-all-div purple-bg"><span class="glyphicon glyphicon-share-alt pull-right pad-left"></span> <a href="spotlight.aspx">View All Spotlights</a></div>
+        </div>
+
+        
+    </div>
+
+    <div class="col-md-4">
+        <div id="tweets">
+            <h2 class="tweet-heading"><a href="https://twitter.com/ugdsb" title="Follow Us">UGDSB</a></h2>
+            <div class="tweet-body">
+                    <a class="twitter-timeline"  href="https://twitter.com/ugdsb"  data-widget-id="571317672005349376" data-chrome="transparent noborders nofooter noheader noscrollbar" data-tweet-limit="3" height="400">Tweets by @ugdsb</a>
+                    <script>
+                        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
+
+                    </script>
+
+                    
+                
+            </div>
+            <div class="tweet-footer"><span class="glyphicon glyphicon-plus-sign pad-left pad-right pull-right"></span> <a href="https://twitter.com/ugdsb" title="Follow Us on Twitter">Follow us</a></div>
+            
+        </div>
+
+
+        <div class="heading-events"><h2><span class="glyphicon glyphicon-flash"></span>  Upcoming Events</h2></div> 
+        <div id="calendar" class="panel panel-default no-corner">
+            
+            <div class="panel-body">
+                <asp:Literal ID="eventsDetails" runat="server"></asp:Literal>
+            </div>
+            <div class="event-footer"><span class="glyphicon glyphicon-share-alt pull-right pad-left white"></span> <a href="events.aspx">View Event Details</a></div>
+        </div>
+        
+    </div><!-- content on right -->
+    
+
+</asp:Content>
+
+
